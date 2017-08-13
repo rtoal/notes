@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color: linen;
+  font-family: Arial;
+}
+
+h1 {
+  background-color: purple;
+  color: white;
+  font-size: 32px;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+p {
+  font-size: 12px;
+}
