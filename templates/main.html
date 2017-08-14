@@ -15,8 +15,8 @@
     <h1>Notes</h1>
     <nav>
       <a href="/notes">Add a Note</a>
-      {% if logout_link %}
-        <a href="{{ logout_link }}">Logout</a>
+      {% if logout_url %}
+        <a href="{{ logout_url }}">Logout</a>
       {% endif %}
     </nav>
     {% for note in notes %}
