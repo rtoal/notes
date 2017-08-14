@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a Note</title>
+  </head>
+  <body>
+    <p>Hi {{ nickname }}, add your note:</p>
+    <form method="post" action="/notes">
+      <p><textarea rows="5" cols="40" name="note"></textarea></p>
+      <p><input type="submit" value="Post the note"></p>
+    </form>
+    <p><a href="{{ logout_url }}">Logout</a></p>
+  </body>
+</html>
