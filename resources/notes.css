@@ -16,3 +16,23 @@ h1 {
 p {
   font-size: 12px;
 }
+
+article.note .timestamp {
+  display: block;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+article.note .content {
+  display: block;
+  font-style: bold;
+}
+
+article {
+  padding: 10px 30px 5px 30px;
+}
+
+nav {
+  background-color: cyan;
+  padding: 5px 30px;
+}

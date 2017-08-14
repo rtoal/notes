@@ -13,6 +13,17 @@
   </head>
   <body>
     <h1>Notes</h1>
-    <p>This will be a notes application.</p>
+    <nav>
+      <a href="/notes">Add a Note</a>
+      {% if logout_link %}
+        <a href="{{ logout_link }}">Logout</a>
+      {% endif %}
+    </nav>
+    {% for note in notes %}
+    <article class="note">
+      <span class="timestamp">{{ note.timestamp }}</span>
+      <span class="content">{{ note.content }}</span>
+    </article>
+    {% endfor %}
   </body>
 </html>
