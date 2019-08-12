@@ -28,6 +28,8 @@ class NoteHandler(webapp2.RequestHandler):
             'logout_url': users.create_logout_url('/')}))
     def post(self):
         note = self.request.get('note')
+        if len(note) > 1500:
+            note = note[:1500]
         user = users.get_current_user()
         Note(user_id=user.user_id(), content=note).put()
         self.redirect('/')
