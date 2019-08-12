@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Add a Note</title>
+    <link rel="stylesheet" href="/styles/notes.css">
   </head>
   <body>
-    <p>Hi {{ nickname }}, add your note:</p>
+    <h1>Add a Note</h1>
+    {% if nickname %}
+      <div>Welcome, {{ nickname }} | <a href="{{ logout_url }}">Logout</a></div>
+    {% endif %}
     <form method="post" action="/notes">
-      <p><textarea rows="5" cols="40" name="note"></textarea></p>
-      <p><input type="submit" value="Post the note"></p>
+      <p><textarea name="note" rows="5" cols="50"></textarea></p>
+      <p><input type="submit" value="Add"></p>
     </form>
-    <p><a href="{{ logout_url }}">Logout</a></p>
   </body>
 </html>

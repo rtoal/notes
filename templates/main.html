@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Notes!</title>
-    <link rel="stylesheet" href="styles/notes.css">
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous">
-    </script>
-    <script src="scripts/notes.js"></script>
+    <title>Notes</title>
+    <link rel="stylesheet" href="/styles/notes.css">
   </head>
   <body>
     <h1>Notes</h1>
-    <nav>
-      <a href="/notes">Add a Note</a>
-      {% if logout_url %}
-        <a href="{{ logout_url }}">Logout</a>
-      {% endif %}
-    </nav>
+    {% if nickname %}
+      <div>Welcome, {{ nickname }} | <a href="{{ logout_url }}">Logout</a></div>
+    {% endif %}
+    <section>
     {% for note in notes %}
-    <article class="note">
-      <span class="timestamp">{{ note.timestamp }}</span>
-      <span class="content">{{ note.content }}</span>
-    </article>
+      <article>
+        {{ note.timestamp }} ({{note.user_id}}) <div>{{ note.content }}</div>
+      </article>
     {% endfor %}
+    </section>
+    <p id="addbutton"><a href="/notes">Add a new note</a></p>
+    <script src="/scripts/notes.js"></script>
   </body>
 </html>
